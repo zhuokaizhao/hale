@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install/include",
+                "/Users/zhuokaizhao/Desktop/UChicago/Research/glfw-3.2.1/include",
+                "/Users/zhuokaizhao/Desktop/UChicago/Research/glm"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

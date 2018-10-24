@@ -1,6 +1,8 @@
 # NOTE: Change these next three lines as needed
-TEEM = ../../teem-install
-HALE = ../../hale-install
+#TEEM = ../../teem-install
+TEEM = /Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install
+#HALE = ../../hale-install
+HALE = /Users/zhuokaizhao/Desktop/UChicago/Research/hale/hale-install
 GLM = /usr/local/include/glm/
 
 OS := $(shell uname)
@@ -16,7 +18,7 @@ RPATH = -Wl,-rpath,$(TEEM)/lib
 IPATH = -I$(HALE)/include -I$(TEEM)/include -I$(GLM)
 LPATH = -L$(HALE)/lib -L$(TEEM)/lib -L$(GLM)
 
-CC = g++ -std=c++11
+CC = g++-8 -std=c++11
 
 all: iso simple
 

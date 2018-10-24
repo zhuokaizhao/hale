@@ -22,12 +22,13 @@
 
 LIB = libhale.a
 
-TEEM = $(HOME)/teem-install
+#TEEM = $(HOME)/teem-install
+TEEM = /Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install
 GLM = /usr/local/include/glm/
 
 IPATH = -I$(TEEM)/include -I$(GLM)
 
-CXX = g++
+CXX = g++-8
 AR = ar crs
 CXXFLAGS = -Wall -std=c++11 -g
 
@@ -37,7 +38,8 @@ SRCS = enums.cpp globals.cpp utils.cpp Camera.cpp Viewer.cpp Program.cpp \
 	Polydata.cpp Scene.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-DEST = $(HOME)/hale-install
+#DEST = $(HOME)/hale-install
+DEST = /Users/zhuokaizhao/Desktop/UChicago/Research/hale/hale-install
 DEST_LIB = $(DEST)/lib/$(LIB)
 DEST_HDR = $(DEST)/include/$(HDR)
 
