@@ -20,7 +20,9 @@ RPATH = -Wl,-rpath,$(TEEM)/lib
 IPATH = -I$(HALE)/include -I$(TEEM)/include -I$(GLM) -I$(EIGEN) -I$(NANOVG)
 LPATH = -L$(HALE)/lib -L$(TEEM)/lib -L$(GLM)
 
-CC = g++-8 -std=c++11
+# try to use Clang
+CC = Clang -std=c++11
+#CC = g++-8 -std=c++11
 
 all: iso simple
 
