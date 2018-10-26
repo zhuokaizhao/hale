@@ -6,7 +6,10 @@
                 "${workspaceFolder}/**",
                 "/Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install/include",
                 "/Users/zhuokaizhao/Desktop/UChicago/Research/glfw-3.2.1/include",
-                "/Users/zhuokaizhao/Desktop/UChicago/Research/glm"
+                "/usr/local/include/glm",
+                "/usr/local/include/nanogui",
+                "/usr/local/include/eigen3",
+                "/Users/zhuokaizhao/Desktop/UChicago/Research/nanogui/ext/nanovg/src"
             ],
             "defines": [],
             "macFrameworkPath": [

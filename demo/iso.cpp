@@ -2,6 +2,15 @@
 #include <Hale.h>
 #include <glm/glm.hpp>
 
+// some nano gui attempt
+#include <nanogui/nanogui.h>
+
+std::string hotkey_h = "print this usage info";
+std::string hotkey_c = "print camera specification";
+std::string hotkey_s = "save viewer image";
+std::string hotkey_o = "toggle between orthographic or perspective";
+std::string hotkey_r = "reset everything";
+
 void render(Hale::Viewer *viewer){
   viewer->draw();
   viewer->bufferSwap();
@@ -14,6 +23,31 @@ main(int argc, const char **argv) {
   hestOpt *hopt=NULL;
   hestParm *hparm;
   airArray *mop;
+
+  // initialize nanogui
+  nanogui::init();
+  // a window to display the gui
+  nanogui::Screen *screen = new nanogui::Screen(nanogui::Vector2i(500, 700), "NanoGUI for Hale");
+  // a gui menu
+  bool enabled = true;
+  nanogui::FormHelper *gui = new nanogui::FormHelper(screen);
+  nanogui::ref<nanogui::Window> window = gui->addWindow(Eigen::Vector2i(10, 10), "Things you can play with");
+  
+  // add a bunch of options
+  // addGroup is the topic name
+  gui->addGroup("Hot keys description");
+  gui->addVariable("string", hotkey_c);
+  gui->addVariable("string", hotkey_h);
+  gui->addVariable("string", hotkey_o);
+  gui->addVariable("string", hotkey_r);
+  gui->addVariable("string", hotkey_s);
+
+  // set screen to be visible
+  screen->setVisible(true);
+  screen->performLayout();
+  window->center();
+
+  nanogui::mainloop();
 
   /* variables learned via hest */
   Nrrd *nin;
@@ -146,6 +180,7 @@ main(int argc, const char **argv) {
 
   /* clean exit; all okay */
   Hale::done();
+  nanogui::shutdown();
   airMopOkay(mop);
   return 0;
 }

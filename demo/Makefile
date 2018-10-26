@@ -4,6 +4,8 @@ TEEM = /Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install
 #HALE = ../../hale-install
 HALE = /Users/zhuokaizhao/Desktop/UChicago/Research/hale/hale-install
 GLM = /usr/local/include/glm/
+EIGEN = /usr/local/include/eigen3
+NANOVG = /Users/zhuokaizhao/Desktop/UChicago/Research/nanogui/ext/nanovg/src
 
 OS := $(shell uname)
 ifeq ($(OS), Darwin)
@@ -15,7 +17,7 @@ endif
 LIBS = -lglfw3 -lhale -lteem -lpng -lz
 
 RPATH = -Wl,-rpath,$(TEEM)/lib
-IPATH = -I$(HALE)/include -I$(TEEM)/include -I$(GLM)
+IPATH = -I$(HALE)/include -I$(TEEM)/include -I$(GLM) -I$(EIGEN) -I$(NANOVG)
 LPATH = -L$(HALE)/lib -L$(TEEM)/lib -L$(GLM)
 
 CC = g++-8 -std=c++11
