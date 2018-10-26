@@ -5,13 +5,13 @@
 // some nano gui attempt
 
 #include <nanogui/nanogui.h>
-
+/*
 std::string hotkey_h = "print this usage info";
 std::string hotkey_c = "print camera specification";
 std::string hotkey_s = "save viewer image";
 std::string hotkey_o = "toggle between orthographic or perspective";
 std::string hotkey_r = "reset everything";
-
+*/
 void render(Hale::Viewer *viewer){
   viewer->draw();
   viewer->bufferSwap();
@@ -25,6 +25,7 @@ main(int argc, const char **argv) {
   hestParm *hparm;
   airArray *mop;
 
+/*
   // initialize nanogui
   nanogui::init();
   // a window to display the gui
@@ -49,6 +50,7 @@ main(int argc, const char **argv) {
   window->center();
 
   nanogui::mainloop();
+*/
 
   /* variables learned via hest */
   Nrrd *nin;
@@ -181,7 +183,7 @@ main(int argc, const char **argv) {
 
   /* clean exit; all okay */
   Hale::done();
-  nanogui::shutdown();
+  //nanogui::shutdown();
   airMopOkay(mop);
   return 0;
 }
