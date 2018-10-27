@@ -24,18 +24,18 @@ LIB = libhale.a
 
 #TEEM = $(HOME)/teem-install
 # The TEEM below was compiled with Clang
-#TEEM = /usr/local/include/teem/
+TEEM = /usr/local/include/teem/
 
 # The TEEM below was compiled with g++-8
-TEEM = /Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install
+#TEEM = /Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install
 
 GLM = /usr/local/include/glm/
 
 IPATH = -I$(TEEM)/include -I$(GLM)
 
 # try with Clang 10.0
-#CXX = Clang
-CXX = g++-8
+CXX = Clang
+#CXX = g++-8
 
 AR = ar crs
 CXXFLAGS = -Wall -std=c++11 -g
@@ -46,8 +46,8 @@ SRCS = enums.cpp globals.cpp utils.cpp Camera.cpp Viewer.cpp Program.cpp Polydat
 OBJS = $(SRCS:.cpp=.o)
 
 # destination to save lib and include head files
-#DEST = $(HOME)/hale-install-g++
-DEST = /Users/zhuokaizhao/Desktop/UChicago/Research/hale/hale-install-g++
+#DEST = $(HOME)/hale-install-clang
+DEST = /Users/zhuokaizhao/Desktop/UChicago/Research/hale/hale-install-clang
 DEST_LIB = $(DEST)/lib/$(LIB)
 DEST_HDR = $(DEST)/include/$(HDR)
 

@@ -4,7 +4,7 @@
 
 // some nano gui attempt
 
-#include <nanogui/nanogui.h>
+//#include <nanogui/nanogui.h>
 /*
 std::string hotkey_h = "print this usage info";
 std::string hotkey_c = "print camera specification";
