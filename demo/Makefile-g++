@@ -1,13 +1,12 @@
 # NOTE: Change these next three lines as needed
 #TEEM = ../../teem-install
 # The TEEM below was compiled with Clang
-TEEM = /usr/local/include/teem/
-
+#TEEM = /usr/local/include/teem/
 # The TEEM below was compiled with g++-8
-#TEEM = /Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install
-
+TEEM = /Users/zhuokaizhao/Desktop/UChicago/Research/Teem/teem-install
 #HALE = ../../hale-install
-HALE = /Users/zhuokaizhao/Desktop/UChicago/Research/hale/hale-install-clang
+HALE = /Users/zhuokaizhao/Desktop/UChicago/Research/hale/hale-install-g++
+#HALE = /usr/local
 GLM = /usr/local/include/glm
 EIGEN = /usr/local/include/eigen3
 NANOVG = /Users/zhuokaizhao/Desktop/UChicago/Research/nanogui/ext/nanovg/src
@@ -19,15 +18,15 @@ else
 OS_LIBS = -lGL -lX11 -lXxf86vm -lXrandr -lpthread -lXi
 endif
 
-LIBS = -lglfw3 -lhale -lteem -lpng -lz -lbz2
+LIBS = -lglfw3 -lhale -lteem -lpng -lz
 
 RPATH = -Wl,-rpath,$(TEEM)/lib
 IPATH = -I$(HALE)/include -I$(TEEM)/include -I$(GLM) -I$(EIGEN) -I$(NANOVG)
 LPATH = -L$(HALE)/lib -L$(TEEM)/lib -L$(GLM)
 
 # try to use Clang
-CC = clang++ -std=c++11 -stdlib=libc++
-#CC = g++-8 -std=c++11
+#CC = Clang -std=c++11
+CC = g++-8 -std=c++11
 
 all: iso simple
 
